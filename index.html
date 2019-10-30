@@ -3,20 +3,102 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Weather Dashboard</title>
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <link rel="stylehseet" href="assets/css/style.css">
-    
+    <title>Weather Dashboard</title>
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-darl bg-dark">
+            <div class="container">
+                <a class="navbar-brand text-light" href="#">Weather Dashboard</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="card card-light bg-light col-md-4">
+                <div class="row">
+                    <div class="card-body col-md-12">
+                        <h5 class="card-title">Search for a city:</h5>
+                        <nav class="navbar navbar-light bg-light col-md-12">
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                    aria-label="Search">
+                                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </nav>
+                        <ul class="list-group col-md-12 mx-auto mt-3 mr-0">
+                            <li class="list-group-item">Austin</li>
+                            <li class="list-group-item">Chicago</li>
+                            <li class="list-group-item">New York</li>
+                            <li class="list-group-item">San Fancisco</li>
+                            <li class="list-group-item">Atlanta</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-8">
+                <div class="row">
+                    <div class="card col-md-12">
+                        <div class="card-body">
+                            <h3>Atlanta</h3>
+                            <p>Temperature:</p>
+                            <p>Humidity:</p>
+                            <p>Wind Speed:</p>
+                            <p>UV Index:</p>
+                            <h3 class="m-0">5-Day Forecast:</h3>
+                        </div>
+                        <div class="row">
+                            <div></div>
+                            <div class="card bg-primary text-light col-md-2 ml-3 mr-2 mt-2 mb-2">
+                                <p>Date</p>
+                                <p>Emoji</p>
+                                <p>Temp:</p>
+                                <p>Humidity</p>
+                            </div>
+                            <div class="card bg-primary text-light col-md-2 m-2">
+                                <p>Date</p>
+                                <p>Emoji</p>
+                                <p>Temp:</p>
+                                <p>Humidity</p>
+                            </div>
+                            <div class="card bg-primary text-light col-md-2 m-2">
+                                <p>Date</p>
+                                <p>Emoji</p>
+                                <p>Temp:</p>
+                                <p>Humidity</p>
+                            </div>
+                            <div class="card bg-primary text-light col-md-2 m-2">
+                                <p>Date</p>
+                                <p>Emoji</p>
+                                <p>Temp:</p>
+                                <p>Humidity</p>
+                            </div>
+                            <div class="card bg-primary text-light col-md-2 ml-2 mr-3 mt-2 mb-2">
+                                <p>Date</p>
+                                <p>Emoji</p>
+                                <p>Temp:</p>
+                                <p>Humidity</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
@@ -32,10 +114,10 @@
 
 
 
-<script
-src="https://code.jquery.com/jquery-3.4.1.min.js"
-integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-crossorigin="anonymous"></script>
-<script src="assets/script.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="assets/script.js"></script>
 </body>
+
 </html>
