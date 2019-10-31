@@ -1,13 +1,3 @@
-// openweathermap APIs 
-    // current weather by location:
-        // city, country
-    // predicted weather by location:
-        // city, country
-        // limit count return to 5 days of results
-
-
-
-        
 var apiKey = "c3bb0467c5fe3c085d6f9dc0307b561b";
 
 $(document).ready(function(){
@@ -70,11 +60,13 @@ $("#search-button").on("click", function(event){
             $("#temp4").append(response.list[3].main.temp + " °F");
             $("#temp5").append(response.list[4].main.temp + " °F");
             
-            $("humid1").append(response.list[0].main.humidity);
-
+            $("#humid1").append(response.list[0].main.humidity + " %");
+            $("#humid2").append(response.list[1].main.humidity + " %");
+            $("#humid3").append(response.list[2].main.humidity + " %");
+            $("#humid4").append(response.list[3].main.humidity + " %");
+            $("#humid5").append(response.list[4].main.humidity + " %");
         });
             
-
     });   
 
     
