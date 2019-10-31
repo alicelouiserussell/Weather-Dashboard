@@ -55,15 +55,24 @@ $("#search-button").on("click", function(event){
             $("#uv-index").append(currentUv);
         });
 
-        // var fiveDayUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${currentCity},us&APPID=${apiKey}`;
+        var fiveDayUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${currentCity},us&APPID=${apiKey}&units=imperial`;
 
-        // $.ajax({
-        //     url: fiveDayUrl,
-        //     method: "GET"
-        // }).done(function(response){
-        //     console.log(response);
+        $.ajax({
+            url: fiveDayUrl,
+            method: "GET"
+        }).done(function(response){
+            console.log(response);
+            console.log(response.list[0].main.temp);
             
-        // });
+            $("#temp1").append(response.list[0].main.temp + " °F");
+            $("#temp2").append(response.list[1].main.temp + " °F");
+            $("#temp3").append(response.list[2].main.temp + " °F");
+            $("#temp4").append(response.list[3].main.temp + " °F");
+            $("#temp5").append(response.list[4].main.temp + " °F");
+            
+            $("humid1").append(response.list[0].main.humidity);
+
+        });
             
 
     });   
