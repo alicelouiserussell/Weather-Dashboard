@@ -9,9 +9,51 @@
 
 
 var apiKey = "c3bb0467c5fe3c085d6f9dc0307b561b";
-var city; 
 
-var currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},us&APPID=${apiKey}&units=imperial`;
 
-var dailyUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city},us&APPI=${apiKey}&cnt=5`
+$(document).ready(function(){
+  
+$("#search-button").on("click", function(event){
+    event.preventDefault();
+    var cityInput = $("input").val();
+    console.log(cityInput);
 
+});
+
+});
+
+function currentWeather(){
+
+};
+
+function fiveDay(){
+
+};
+
+function searchHistory(){
+
+};
+
+function UvIndex (){
+
+};
+
+// $(".city-form").on("click", ".btn", function(event){
+//     event.preventDefault();
+//     alert("hello!");
+//     var cityInput = $(this).attr("data-city");
+//     console.log(cityInput);
+//     var currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput},us&APPID=${apiKey}&units=imperial`;
+//     console.log(cityInput);
+
+
+
+//     $.ajax({
+//         url: currentUrl,
+//         method: "GET"
+//     }).done(function(response){
+//         console.log(response);
+
+
+//     });
+// });
