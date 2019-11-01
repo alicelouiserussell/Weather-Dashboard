@@ -36,7 +36,8 @@
                         <nav class="navbar navbar-light bg-light col-md-12">
                             <form class="form-inline city-form" id="city-input">
                                 <input class="form-control mr-sm-2" type="search">
-                                <button class="btn btn-outline-primary my-2 my-sm-0 data-city" id="search-button" type="submit">Search</button>
+                                <button class="btn btn-outline-primary my-2 my-sm-0 data-city" id="search-button"
+                                    type="submit">Search</button>
                             </form>
                         </nav>
                         <ul class="list-group col-md-12 mx-auto mt-3 mr-0">
@@ -61,37 +62,39 @@
                             <p id="uv-index">UV Index: </p>
                             <h3 class="m-0">5-Day Forecast: </h3>
                         </div>
-                        <div class="row">
-                            <div></div>
-                            <div class="card bg-primary text-light col-md-2 ml-3 mr-2 mt-2 mb-2">
-                                <p>Date</p>
-                                <p>Emoji</p>
-                                <p id=temp1>Temp: </p>
-                                <p id=humid1>Humidity: </p>
-                            </div>
-                            <div class="card bg-primary text-light col-md-2 m-2">
-                                <p>Date</p>
-                                <p>Emoji</p>
-                                <p id=temp2>Temp: </p>
-                                <p id=humid2>Humidity: </p>
-                            </div>
-                            <div class="card bg-primary text-light col-md-2 m-2">
-                                <p>Date</p>
-                                <p>Emoji</p>
-                                <p id=temp3>Temp: </p>
-                                <p id=humid3>Humidity: </p>
-                            </div>
-                            <div class="card bg-primary text-light col-md-2 m-2">
-                                <p>Date</p>
-                                <p>Emoji</p>
-                                <p id=temp4>Temp: </p>
-                                <p id=humid4>Humidity: </p>
-                            </div>
-                            <div class="card bg-primary text-light col-md-2 ml-2 mr-3 mt-2 mb-2">
-                                <p>Date</p>
-                                <p>Emoji</p>
-                                <p id=temp5>Temp: </p>
-                                <p id=humid5>Humidity: </p>
+                        <div class="cards">
+                            <div class="row">
+                                <div></div>
+                                <div class="card bg-primary text-light col-md-2 ml-3 mr-2 mt-2 mb-2">
+                                    <div id="date1"></div>
+                                    <div></div>
+                                    <p id=temp1>Temp: </p>
+                                    <p id=humid1>Humidity: </p>
+                                </div>
+                                <div class="card bg-primary text-light col-md-2 m-2">
+                                    <div id="date2"></div>
+                                    <div></div>
+                                    <p id=temp2>Temp: </p>
+                                    <p id=humid2>Humidity: </p>
+                                </div>
+                                <div class="card bg-primary text-light col-md-2 m-2">
+                                    <div id="date3"></div>
+                                    <div></div>
+                                    <p id=temp3>Temp: </p>
+                                    <p id=humid3>Humidity: </p>
+                                </div>
+                                <div class="card bg-primary text-light col-md-2 m-2">
+                                    <div id="date4"></div>
+                                    <div></div>
+                                    <p id=temp4>Temp: </p>
+                                    <p id=humid4>Humidity: </p>
+                                </div>
+                                <div class="card bg-primary text-light col-md-2 ml-2 mr-3 mt-2 mb-2">
+                                    <div id="date5"></div>
+                                    <div></div>
+                                    <p id=temp5>Temp: </p>
+                                    <p id=humid5>Humidity: </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -100,6 +103,7 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://momentjs.com/downloads/moment.js"></script>
         <script src="assets/script.js"></script>
 </body>
 

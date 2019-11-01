@@ -1,4 +1,12 @@
 var apiKey = "c3bb0467c5fe3c085d6f9dc0307b561b";
+var currentDate = moment().format("L");
+console.log(currentDate);
+
+var futureDay1 = moment().add(1,'days').startOf('day').format("L");
+var futureDay2 = moment().add(2,'days').startOf('day').format("L");
+var futureDay3 = moment().add(3,'days').startOf('day').format("L");
+var futureDay4 = moment().add(4,'days').startOf('day').format("L");
+var futureDay5 = moment().add(5,'days').startOf('day').format("L");
 
 $(document).ready(function(){
   
@@ -8,6 +16,8 @@ $("#search-button").on("click", function(event){
     var currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput},us&APPID=${apiKey}&units=imperial`
     console.log(cityInput);
     console.log(currentUrl);
+
+    
 
     $.ajax({
         url: currentUrl,
@@ -30,7 +40,8 @@ $("#search-button").on("click", function(event){
 
         var currentUvUrl = `https://api.openweathermap.org/data/2.5/uvi?lat=${currentLat}&lon=${currentLon}&APPID=${apiKey}`;
 
-        $("#current-city").append(currentCity);
+        $("#current-city").append(currentCity + "(");
+        $("#current-city").append(" " + currentDate + ")");
         $("#current-temp").append(currentTemp + " °F");
         $("#current-humidity").append(currentHumidity + " %");
         $("#current-wind").append(currentWind + " MPH");
@@ -66,8 +77,16 @@ $("#search-button").on("click", function(event){
             $("#humid4").append(response.list[3].main.humidity + " %");
             $("#humid5").append(response.list[4].main.humidity + " %");
         });
+
+
+        $("#date1").append(futureDay1);
+        $("#date2").append(futureDay2);
+        $("#date3").append(futureDay3);
+        $("#date4").append(futureDay4);
+        $("#date5").append(futureDay5);
             
     });   
+
 
     
 });
