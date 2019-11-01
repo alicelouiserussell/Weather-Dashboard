@@ -23,13 +23,8 @@ $("#search-button").on("click", function(event){
         url: currentUrl,
         method: "GET"
     }).done(function(response){
-        console.log(response.name);
         console.log(response);
-        console.log(response.main.temp);
-        console.log(response.main.humidity);
-        console.log(response.wind.speed);
-        console.log(response.coord.lat);
-        console.log(response.coord.lon);
+        console.log(response.weather[0].icon);
 
         var currentCity = response.name;
         var currentTemp = response.main.temp;
@@ -37,14 +32,20 @@ $("#search-button").on("click", function(event){
         var currentWind = response.wind.speed;
         var currentLat = response.coord.lat;
         var currentLon = response.coord.lon;
+        var currentIcon = response.weather[0].icon;
+        var currentIconUrl = `http://openweathermap.org/img/w/${currentIcon}.png`;
+        
 
         var currentUvUrl = `https://api.openweathermap.org/data/2.5/uvi?lat=${currentLat}&lon=${currentLon}&APPID=${apiKey}`;
 
+        
         $("#current-city").append(currentCity + "(");
         $("#current-city").append(" " + currentDate + ")");
+        $("#current-icon").attr('src', currentIconUrl);
         $("#current-temp").append(currentTemp + " °F");
         $("#current-humidity").append(currentHumidity + " %");
         $("#current-wind").append(currentWind + " MPH");
+        
 
         $.ajax({
             url: currentUvUrl,
@@ -64,7 +65,26 @@ $("#search-button").on("click", function(event){
         }).done(function(response){
             console.log(response);
             console.log(response.list[0].main.temp);
-            
+            console.log(response.list[0].weather[0].icon);
+    
+            var icon1 = response.list[0].weather[0].icon;
+            var icon2 = response.list[1].weather[0].icon;
+            var icon3 = response.list[2].weather[0].icon;
+            var icon4 = response.list[3].weather[0].icon;
+            var icon5 = response.list[4].weather[0].icon;
+
+            var icon1Url = `http://openweathermap.org/img/w/${icon1}.png`;
+            var icon2Url = `http://openweathermap.org/img/w/${icon2}.png`;
+            var icon3Url = `http://openweathermap.org/img/w/${icon3}.png`;
+            var icon4Url = `http://openweathermap.org/img/w/${icon4}.png`;
+            var icon5Url = `http://openweathermap.org/img/w/${icon5}.png`;
+
+            $("#icon1").attr('src', icon1Url);
+            $("#icon2").attr('src', icon2Url);
+            $("#icon3").attr('src', icon3Url);
+            $("#icon4").attr('src', icon4Url);
+            $("#icon5").attr('src', icon5Url);
+
             $("#temp1").append(response.list[0].main.temp + " °F");
             $("#temp2").append(response.list[1].main.temp + " °F");
             $("#temp3").append(response.list[2].main.temp + " °F");
@@ -93,19 +113,4 @@ $("#search-button").on("click", function(event){
 
 });
 
-function currentWeather(){
-
-};
-
-function fiveDay(){
-
-};
-
-function searchHistory(){
-
-};
-
-function uvIndex (){
-
-};
 
