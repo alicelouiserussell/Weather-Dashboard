@@ -34,6 +34,8 @@ $("#search-button").on("click", function(event){
         var currentLon = response.coord.lon;
         var currentIcon = response.weather[0].icon;
         var currentIconUrl = `http://openweathermap.org/img/w/${currentIcon}.png`;
+
+        var setIcon = $("#current-icon").attr('src', currentIconUrl);
         
 
         var currentUvUrl = `https://api.openweathermap.org/data/2.5/uvi?lat=${currentLat}&lon=${currentLon}&APPID=${apiKey}`;
@@ -41,7 +43,7 @@ $("#search-button").on("click", function(event){
         
         $("#current-city").append(currentCity + "(");
         $("#current-city").append(" " + currentDate + ")");
-        $("#current-icon").attr('src', currentIconUrl);
+        $("#current-city").append(setIcon);
         $("#current-temp").append(currentTemp + " °F");
         $("#current-humidity").append(currentHumidity + " %");
         $("#current-wind").append(currentWind + " MPH");
@@ -79,11 +81,31 @@ $("#search-button").on("click", function(event){
             var icon4Url = `http://openweathermap.org/img/w/${icon4}.png`;
             var icon5Url = `http://openweathermap.org/img/w/${icon5}.png`;
 
-            $("#icon1").attr('src', icon1Url);
-            $("#icon2").attr('src', icon2Url);
-            $("#icon3").attr('src', icon3Url);
-            $("#icon4").attr('src', icon4Url);
-            $("#icon5").attr('src', icon5Url);
+            $("#icon1").attr({
+                src: icon1Url,
+                width: 50, 
+                height: 50
+            });
+            $("#icon2").attr({
+                src: icon2Url,
+                width: 50, 
+                height: 50
+            });
+            $("#icon3").attr({
+                src: icon3Url,
+                width: 50, 
+                height: 50
+            });
+            $("#icon4").attr({
+                src: icon4Url,
+                width: 50, 
+                height: 50
+            });
+            $("#icon5").attr({
+                src: icon5Url,
+                width: 50, 
+                height: 50
+            });
 
             $("#temp1").append(response.list[0].main.temp + " °F");
             $("#temp2").append(response.list[1].main.temp + " °F");
@@ -106,8 +128,6 @@ $("#search-button").on("click", function(event){
         $("#date5").append(futureDay5);
             
     });   
-
-
     
 });
 
