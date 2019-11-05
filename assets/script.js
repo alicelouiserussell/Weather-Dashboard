@@ -158,13 +158,21 @@ $("#search-button").on("click", function(event){
         var currentIcon = response.weather[0].icon;
         var currentIconUrl = `http://openweathermap.org/img/w/${currentIcon}.png`;
         var setIcon = $("#current-icon").attr('src', currentIconUrl);
+
+        $("#current-city").empty();
+        $("#current-city").empty();
+        $("#current-city").empty();
+        $("#current-temp").empty();
+        $("#current-humidity").empty();
+        $("#current-wind").empty();
+        
         
         $("#current-city").append(currentCity + "(");
         $("#current-city").append(" " + currentDate + ")");
         $("#current-city").append(setIcon);
-        $("#current-temp").append(currentTemp + " °F");
-        $("#current-humidity").append(currentHumidity + " %");
-        $("#current-wind").append(currentWind + " MPH");
+        $("#current-temp").append("Temperature: " + currentTemp + " °F");
+        $("#current-humidity").append("Humidity: " + currentHumidity + " %");
+        $("#current-wind").append("Wind Speed: " + currentWind + " MPH");
         
         var currentUvUrl = `https://api.openweathermap.org/data/2.5/uvi?lat=${currentLat}&lon=${currentLon}&APPID=${apiKey}`;
 
@@ -175,7 +183,8 @@ $("#search-button").on("click", function(event){
             console.log(response);
             console.log(response.value);
             var currentUv = response.value;
-            $("#uv-index").append(currentUv);
+            $("#uv-index").empty();
+            $("#uv-index").append("UV Index: " + currentUv);
         });
 
         var fiveDayUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${currentCity},us&APPID=${apiKey}&units=imperial`;
@@ -226,17 +235,30 @@ $("#search-button").on("click", function(event){
                 height: 50
             });
 
-            $("#temp1").append(response.list[0].main.temp + " °F");
-            $("#temp2").append(response.list[1].main.temp + " °F");
-            $("#temp3").append(response.list[2].main.temp + " °F");
-            $("#temp4").append(response.list[3].main.temp + " °F");
-            $("#temp5").append(response.list[4].main.temp + " °F");
+            $("#temp1").empty();
+            $("#temp2").empty();
+            $("#temp3").empty();
+            $("#temp4").empty();
+            $("#temp5").empty();
             
-            $("#humid1").append(response.list[0].main.humidity + " %");
-            $("#humid2").append(response.list[1].main.humidity + " %");
-            $("#humid3").append(response.list[2].main.humidity + " %");
-            $("#humid4").append(response.list[3].main.humidity + " %");
-            $("#humid5").append(response.list[4].main.humidity + " %");
+            $("#humid1").empty();
+            $("#humid2").empty();
+            $("#humid3").empty();
+            $("#humid4").empty();
+            $("#humid5").empty();
+
+
+            $("#temp1").append("Temp: " + response.list[0].main.temp + " °F");
+            $("#temp2").append("Temp: " + response.list[1].main.temp + " °F");
+            $("#temp3").append("Temp: " + response.list[2].main.temp + " °F");
+            $("#temp4").append("Temp: " + response.list[3].main.temp + " °F");
+            $("#temp5").append("Temp: " + response.list[4].main.temp + " °F");
+            
+            $("#humid1").append("Humidity: " + response.list[0].main.humidity + " %");
+            $("#humid2").append("Humidity: " + response.list[1].main.humidity + " %");
+            $("#humid3").append("Humidity: " + response.list[2].main.humidity + " %");
+            $("#humid4").append("Humidity: " + response.list[3].main.humidity + " %");
+            $("#humid5").append("Humidity: " + response.list[4].main.humidity + " %");
         });
 
 
