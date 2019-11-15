@@ -14,17 +14,15 @@ renderSearches();
 loadBoston();
 
 function renderSearches(){
-    var pulledSearchArray = localStorage.getItem("searchArray");
-    pulledSearchArray = JSON.parse(pulledSearchArray);
+    var pulledCurrentCity = localStorage.getItem("currentCity");
+    pulledCurrentCity = JSON.parse(pulledCurrentCity);
 
-    console.log(pulledSearchArray);    
+    searchArray.push(pulledCurrentCity);
     
-    for (var i = 0; i < pulledSearchArray.length; i++){
-        var city = pulledSearchArray[i];
-        console.log(city);
+    for (var i = 0; i < searchArray.length; i++){
+        var city = searchArray[i];
         var newLi = $('<li class="list-group-item"></li>');
         $("#search-list").append(newLi);
-        console.log(newLi);
         $(newLi).append(city);
     };
 };
@@ -44,7 +42,7 @@ function loadBoston(){
         var currentIcon = response.weather[0].icon;
         var currentIconUrl = `http://openweathermap.org/img/w/${currentIcon}.png`;
         var setIcon = $("#current-icon").attr('src', currentIconUrl);
-
+        
         $("#current-city").append(currentCity + "(");
         $("#current-city").append(" " + currentDate + ")");
         $("#current-city").append(setIcon);
@@ -149,10 +147,8 @@ $("#search-button").on("click", function(event){
 
         var currentCity = response.name; 
 
-        searchArray.push(currentCity);
-
-        var searchArrayJSON = JSON.stringify(searchArray);
-        localStorage.setItem("searchArray", searchArrayJSON);
+        var currentCityJSON = JSON.stringify(currentCity);
+        localStorage.setItem("currentCity", currentCityJSON);
 
         var currentTemp = response.main.temp;
         var currentHumidity = response.main.humidity;
@@ -264,10 +260,16 @@ $("#search-button").on("click", function(event){
             $("#humid4").append("Humidity: " + response.list[3].main.humidity + " %");
             $("#humid5").append("Humidity: " + response.list[4].main.humidity + " %");
         });
+
+
+        $("#date1").append(futureDay1);
+        $("#date2").append(futureDay2);
+        $("#date3").append(futureDay3);
+        $("#date4").append(futureDay4);
+        $("#date5").append(futureDay5);
+
     });   
 
 });
 
 });
-
-
